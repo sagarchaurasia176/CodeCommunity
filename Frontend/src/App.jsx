@@ -1,7 +1,7 @@
 
 import './App.css'
-import HeaderPart from './Pages/HeaderPart'
-import MainPage from './Pages/MainPage'
+// import HeaderPart from './Pages/HeaderPart'
+// import MainPage from './Pages/MainPage'
 import LoginPage from './auth/LoginPage'
 
 function App() {

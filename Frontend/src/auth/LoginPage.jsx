@@ -5,7 +5,7 @@ function LoginPage() {
   return (
     <div>
         <div className=' grid sm:grid-cols-2  h-screen w-screen'>
-          <div className=' bg-white'>
+          <div className=' bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% '>
             {/* login page verifications */}
             <FormPage/>
 
