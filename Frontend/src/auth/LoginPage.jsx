@@ -16,7 +16,7 @@ function LoginPage() {
            <img
               src={RocketImg}
               alt=""
-              className="  cursor-pointer max-w-96  object-contain"
+              className="  cursor-pointer max-w-96  mt-32 object-contain"
             />
            </NavLink>
           

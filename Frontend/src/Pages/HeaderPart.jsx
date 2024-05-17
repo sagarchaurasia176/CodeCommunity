@@ -1,13 +1,17 @@
 import React from "react";
 import logo from "../assets/logo.png";
 import CreatePost from "./Post/CreatePost";
+import { NavLink } from "react-router-dom";
 const HeaderPart = () => {
   return (
     <div>
       <div className="navbar">
         <div className="flex-1">
-          <img src={logo} className="w-10" alt="logo of code" />
+          <NavLink to='/'>
+          <img src={logo} className="w-10 cursor-pointer" alt="logo of code" />
+          </NavLink>
         </div>
+
         <div className="flex-none gap-2">
           <div className="form-control">
             {/* logoin */}
