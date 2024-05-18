@@ -4,7 +4,7 @@ import React from 'react'
 function CreatePost() {
   return (
     <div>
-            <Button>Create post</Button>
+      <button className="btn btn-outline btn-info">Create-Post</button>
     </div>
   )
 }

@@ -1,12 +1,15 @@
 import React from "react";
-import HeaderPart from "./HeaderPart";
 import Leftside from "./Leftside";
 import CenterSide from "./CenterSide";
 import Rightside from "./Rightside";
+import HeaderNav from "./Headers/HeaderNav";
 
 function MainPage() {
   return (
+
     <div>
+    
+    <HeaderNav/>
       {/* navbar */}
       <div className=" grid m-auto bg-white sm:grid-cols-12 p-2  gap-2">
         {/* left side */}
