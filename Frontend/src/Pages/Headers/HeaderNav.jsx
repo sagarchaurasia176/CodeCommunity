@@ -2,23 +2,23 @@ import React from "react";
 import CreatePost from "../Post/CreatePost";
 import ThemeBar from "./ThemeBar";
 // import ThemeBar from "./ThemeBar";
-
+import Logo from "../../assets/logo.png";
 const HeaderNav = () => {
   return (
     <div>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <img src={Logo} alt="" className='w-10 rounded-full'/>
         </div>
+
         <div className="flex-none gap-2">
           <div>
             <CreatePost />
             {/* <ThemeBar /> */}
           </div>
-        <div className=" rounded-md">
-        <ThemeBar/>
-
-        </div>
+          <div className=" rounded-md">
+            <ThemeBar />
+          </div>
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}

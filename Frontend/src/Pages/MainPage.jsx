@@ -11,13 +11,14 @@ function MainPage() {
     
     <HeaderNav/>
       {/* navbar */}
-      <div className=" grid m-auto bg-white sm:grid-cols-12 p-2  gap-2">
+      <div className=" grid m-auto h-screen bg-white sm:grid-cols-12">
         {/* left side */}
-        <div className="  sm:col-span-2 ">
+        <div className=" sm:block sm:col-span-2 relative">
           <Leftside />
         </div>
         {/* center side */}
-        <div className=" sm:col-span-8  bg-slate-400">
+        <div className=" sm:col-span-8 bg-white
+        border-4 border-white-900  border-dashed ">
           {" "}
           <CenterSide />
         </div>
