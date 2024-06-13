@@ -6,7 +6,7 @@ function LoginPage() {
   return (
     <div>
       <div className=" grid sm:grid-cols-2  h-screen w-screen">
-        <div className=" bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ">
+        <div className=" bg-gradient-to-r ">
           {/* login page verifications */}
           <FormPage />
         </div>
@@ -16,7 +16,7 @@ function LoginPage() {
            <img
               src={RocketImg}
               alt=""
-              className="  cursor-pointer max-w-96  mt-32 object-contain"
+              className="  animate  animate-accordion-up  cursor-pointer max-w-96  mt-32 object-contain"
             />
            </NavLink>
           

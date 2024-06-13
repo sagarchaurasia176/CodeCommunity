@@ -1,153 +1,77 @@
-import React, { useContext, useState } from "react";
-import codeCommnity from "../assets/logo.png";
-import { StateManagerByContext } from "@/context/MainContextPage";
-// colsed eye
-import { FaEyeSlash } from "react-icons/fa";
-import { FaEye } from "react-icons/fa";
-import { NavLink, useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
+import React from "react";
+// import {useDispatch , useSelector} from 'react-redux'
 
-// form page function apply here
-function FormPage() {
-  //management destruct here
-  const {
-    Password,
-    setPassword,
-    setLogin,
-    LoginState,
-    FormHandler,
-    resetpassword,
-    setConfirmPassword,
-  } = useContext(StateManagerByContext);
-
-  //navigate apply here
-  const navigator = useNavigate();
-  // password check handler apply here
-  const FormSubmitHandler = (e) => {
-    e.preventDefault();
-    if (LoginState.password != LoginState.resetPassword) {
-      toast.error("password not matched");
-      setLogin(false);
-    } else {
-      setLogin(true);
-      toast.success("login succesfully");
-      navigator("/MainPage");
-    }
-  };
-
+const FormPage = () => {
+  // const dispatch = useDispatch();
   return (
     <div>
-      <form
-        onSubmit={FormSubmitHandler}
-        // onSubmit={FormDataSaver}
-        className="max-w-sm mx-auto my-4 bg-slate-800 p-10 rounded-md"
-      >
-        <div className=" flex lg:flex-1  mb-5 space-x-9 p-2 border-black border-b-2">
-          <NavLink to="/">
+      <div class="w-full  mt-36 max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div class="px-6  py-4">
+          <div class="flex justify-center mx-auto">
             <img
-              src={codeCommnity}
-              className=" bg-black rounded-md p-1 size-8"
+              class="w-auto h-7 sm:h-8"
+              src="https://merakiui.com/images/logo.svg"
               alt=""
             />
-            <span className="  font-semibold text-white">Code Community</span>
-          </NavLink>
+          </div>
+
+          <h3 class="mt-3 text-xl font-medium text-center text-gray-600 dark:text-gray-200">
+            Welcome Back
+          </h3>
+
+          <p class="mt-1 text-center text-gray-500 dark:text-gray-400">
+            Login or create account
+          </p>
+
+          <form>
+            <div class="w-full mt-4">
+              <input
+                class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
+                type="email"
+                placeholder="Email Address"
+                aria-label="Email Address"
+              />
+            </div>
+
+            <div class="w-full mt-4">
+              <input
+                class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
+                type="password"
+                placeholder="Password"
+                aria-label="Password"
+              />
+            </div>
+
+            <div class="flex items-center justify-between mt-4">
+              <a
+                href="#"
+                class="text-sm text-gray-600 dark:text-gray-200 hover:text-gray-500"
+              >
+                Forget Password?
+              </a>
+
+              <button class="px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                Sign In
+              </button>
+            </div>
+          </form>
         </div>
 
-        <div className=" mb-5 ">
-          <label className="block mb-2 text-sm font-medium text-white dark:text-white">
-            Your email
-          </label>
-          <input
-            type="email"
-            value={LoginState.username}
-            onChange={FormHandler}
-            name="username"
-            className="bg-gray-50 border text-black font-medium border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="cc@gmail.com"
-            required
-          />
-        </div>
-
-        {/* password apply here  */}
-
-        <div className="mb-5 ">
-          <label className="block mb-2 text-sm font-medium text-white dark:text-white">
-            Password
-          </label>
-
-          <input
-            type={!Password ? "password" : "text"}
-            onChange={FormHandler}
-            name="password" // onChange={InputCheckHandler}
-            value={LoginState.password}
-            placeholder="********"
-            className="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            required
-          />
-
-          {/* onClick btn apply for the span part */}
-          <span
-            className=" cursor-pointer  
-              mt-[-29px] absolute  ml-[280px] text-black "
-            onClick={() => setPassword((prev) => !prev)}
-          >
-            {/* password eye concepts  */}
-            {Password ? <FaEye /> : <FaEyeSlash />}
+        <div class="flex items-center justify-center py-4 text-center bg-gray-50 dark:bg-gray-700">
+          <span class="text-sm text-gray-600 dark:text-gray-200">
+            Don't have an account?{" "}
           </span>
-        </div>
 
-
-
-
-        {/* Resart-password apply here  */}
-        <div className="mb-5 mt-7 ">
-          <label className="block mb-2 text-sm font-medium text-white dark:text-white">
-            Reset-Password
-          </label>
-
-          <input
-            type={!resetpassword ? "password" : "text"}
-            onChange={FormHandler}
-            name="resetPassword" // onChange={InputCheckHandler}
-            value={LoginState.resetpassword}
-            placeholder="********"
-            className="bg-gray-50 border placeholder:text-black border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            required
-          />
-
-          {/* onClick btn apply for the span part */}
-          <span
-            className=" cursor-pointer 
-              mt-[-29px] absolute  ml-[280px] text-black "
-            onClick={() => setConfirmPassword((prev) => !prev)}
+          <a
+            href="#"
+            class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"
           >
-            {resetpassword? <FaEye /> : <FaEyeSlash />}
-          </span>
+            Register
+          </a>
         </div>
-
-        {/* sign in btn apply here */}
-        <button
-          // onClick={() => InputCheckHandler()}
-          className="text-white  mt-7  duration-500 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300
-           font-medium rounded-lg text-sm lg:w-full  w-full
-           px-5 py-2.5 text-center dark:bg-blue-600
-            dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          LogIn
-        </button>
-
-        {/* divider */}
-        <div className=" block border-opacity-50 ">
-          <div className="divider text-white">OR</div>
-          {/* google authentication provider */}
-          <button className="text-white  w-full duration-500 bg-slate-700 hover:bg-black-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm lg:w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Sign in with Google
-          </button>
-        </div>
-      </form>
-      {/* auth proveider */}
+      </div>
     </div>
   );
-}
+};
 
 export default FormPage;

@@ -1,6 +1,6 @@
 import React from "react";
 import CreatePost from "../Post/CreatePost";
-import ThemeBar from "./ThemeBar";
+// import ThemeBar from "./ThemeBar";
 // import ThemeBar from "./ThemeBar";
 import Logo from "../../assets/logo.png";
 const HeaderNav = () => {
@@ -17,7 +17,7 @@ const HeaderNav = () => {
             {/* <ThemeBar /> */}
           </div>
           <div className=" rounded-md">
-            <ThemeBar />
+            {/* <ThemeBar /> */}
           </div>
           <div className="dropdown dropdown-end">
             <div
