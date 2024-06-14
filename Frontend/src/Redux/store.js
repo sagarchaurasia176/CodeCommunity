@@ -1,8 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import LoginFormSlice from "./Slice/LoginFormSlice";
-
+import MainStateSlice from "./Slice/MainStateSlice";
 export const store = configureStore({
   reducer: {
-    userLogin: LoginFormSlice,
+    mainState: MainStateSlice,
   },
 });
