@@ -1,21 +1,21 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-// import HeaderPart from './Pages/HeaderPart'
-// import MainPage from './Pages/MainPage'
-import LoginPage from "./auth/LoginPage";
 import CreateRegister from "./auth/CreateRegister";
-// import MainPage from "./Pages/MainPage";
-
+import FormPage from "./auth/FormPage";
+import MainPageRouter from "./MainPageRouter";
+import MainAuthPage from "./auth/MainAuthPage";
 
 function App() {
   return (
     <>
-      {/* router apply here  */}
+      <MainAuthPage />
       <Routes>
-        <Route path="/" element={<LoginPage />}></Route>
-        {/* <Route path="/Register" element={<LoginPage/>}></Route> */}
+        {/* main element here */}
+        <Route path="/" element={<MainPageRouter />}>
+          {/* ceate register page here so we get */}
+          <Route path="/Register" element={<CreateRegister />}></Route>
+        </Route>
       </Routes>
-
     </>
   );
 }

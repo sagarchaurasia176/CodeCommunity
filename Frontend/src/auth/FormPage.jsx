@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import CreateRegister from "./CreateRegister";
 // import {useDispatch , useSelector} from 'react-redux'
-import { Link } from "react-router-dom";
 const FormPage = () => {
   // const dispatch = useDispatch();
   const [formSet, setForm] = useState({
@@ -9,19 +9,17 @@ const FormPage = () => {
   });
   // change handler apply here
   const changeHandler = (e) => {
-    setForm((prev) => {
-      return {
-        ...prev,
-        // to specific the name in the form here,
-        [e.target.name]: e.target.value,
-      };
-    });
+    setForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
   };
 
+  // register handler apply here
   return (
     <div>
-      <div className="w-full  mt-36 max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <div className="px-6  py-4">
+      <div className="w-full mt-20 max-w-sm mx-auto  overflow-hidden bg-white rounded-lg shadow-md">
+        <div className="px-6 py-4">
           <div className="flex justify-center mx-auto">
             <img
               className="w-auto h-7 sm:h-8"
@@ -40,7 +38,6 @@ const FormPage = () => {
             <div className="w-full mt-4">
               <input
                 className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
-                type="email"
                 required="true"
                 name="email"
                 value={formSet.email}
@@ -53,7 +50,6 @@ const FormPage = () => {
               <input
                 className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                 type="password"
-                name="password"
                 required="true"
                 value={formSet.password}
                 onChange={changeHandler}
@@ -68,15 +64,11 @@ const FormPage = () => {
               </button>
             </div>
             <br></br>
-            
-              {/* <p className=" cursor-pointer text-sm underline text-gray-600 dark:text-gray-200 hover:text-gray-500">
-              <Link to='/Register'>
-                CreateRegister
-              </Link>      
-
-
-              </p> */}
+            <button className="  border-b-2 font-extralight bg-white text-black">
+              Register account
+            </button>
           </form>
+
           {/* from break here so we get */}
         </div>
       </div>
