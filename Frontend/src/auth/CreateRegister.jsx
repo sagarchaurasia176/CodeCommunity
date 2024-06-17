@@ -13,9 +13,7 @@ const CreateRegister = ({ tooglePage }) => {
             />
           </div>
 
-          <h3 class="mt-3 text-xl font-medium text-center text-gray-600 ">
-            sagar cha
-          </h3>
+       
 
           <p class="mt-1 text-center text-gray-500 dark:text-gray-400">
             Login or create account

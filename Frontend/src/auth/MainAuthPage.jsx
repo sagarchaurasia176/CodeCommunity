@@ -8,7 +8,7 @@ const MainAuthPage = () => {
   // check if its click or not
   const tooglePage = () => {
     setCheck((prev) => !prev);
-  };
+  };  
   return (
     <div>
       <div className=" lg:flex lg:justify-between ">
